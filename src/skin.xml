@@ -1,0 +1,15 @@
+<skin>
+  <defaultresolution>1080p</defaultresolution>
+  <defaultresolutionwide>1080p</defaultresolutionwide>
+  <version>0.1</version>
+  <skinversion>v1.00</skinversion>
+  <zoom>1</zoom>
+  <effectslowdown>0.8</effectslowdown>
+
+  <credits>
+    <skinname>Modal Soul</skinname>
+    <name>Designers [Peter Ng, Richard Ngo];</name>
+    <name>Thanks for Team Razorfish for their release of mediastream</name>
+    <name>the XBMC team</name>
+  </credits>
+</skin>
