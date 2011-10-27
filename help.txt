@@ -1,0 +1,11 @@
+run ./build.sh
+
+help on xpr:
+http://forums.plexapp.com/index.php/topic/93-xpr/
+
+mediastream:
+https://github.com/elan/MediaStream
+
+main mediastream:
+http://xboxmediacenter.svn.sourceforge.net/viewvc/xboxmediacenter/MediaStream/
+http://xbmc.org/skins/mediastream/2/

@@ -111,11 +111,11 @@ echo "======================================================================"
 echo ""
 
 echo -n "(Re)Creating BUILD/${SKINNAME}: "
-if [ -d $DIRNAME/BUILD/$SKINNAME ];
+if [ -d $DIRNAME/../bin/$SKINNAME ];
 then
-	rm -rf "$DIRNAME/BUILD/$SKINNAME"
+	rm -rf "$DIRNAME/../bin/$SKINNAME"
 fi
-mkdir "$DIRNAME/BUILD/$SKINNAME"
+mkdir "$DIRNAME/../bin/$SKINNAME"
 echo "done."
 
 echo -n "Creating exclude.txt file: "
@@ -131,41 +131,41 @@ ${XBMCTEX} -input media-lite -output $DIRNAME/Media/lite.xpr >/dev/null
 echo "done."
 
 echo -n "Copying required files to BUILD/$SKINNAME folder: "
-cp -r $DIRNAME/720p $DIRNAME/BUILD/$SKINNAME/720p 2>/dev/null
-cp -r $DIRNAME/Colors $DIRNAME/BUILD/$SKINNAME/colors 2>/dev/null
-cp -r $DIRNAME/Fonts $DIRNAME/BUILD/$SKINNAME/fonts 2>/dev/null
-cp -r $DIRNAME/Sounds $DIRNAME/BUILD/$SKINNAME/sounds 2>/dev/null
-cp -r $DIRNAME/scripts $DIRNAME/BUILD/$SKINNAME/scripts 2>/dev/null
-cp -r $DIRNAME/language $DIRNAME/BUILD/$SKINNAME/language 2>/dev/null
-cp -r $DIRNAME/extras $DIRNAME/BUILD/$SKINNAME/extras 2>/dev/null
-cp -r $DIRNAME/*.xml $DIRNAME/BUILD/$SKINNAME/. 2>/dev/null
-cp -r $DIRNAME/*.txt $DIRNAME/BUILD/$SKINNAME/. 2>/dev/null
-mkdir $DIRNAME/BUILD/$SKINNAME/media
-cp -r $DIRNAME/Media/*.xpr $DIRNAME/BUILD/$SKINNAME/media/. 2>/dev/null
+cp -r $DIRNAME/720p $DIRNAME/../bin/$SKINNAME/720p 2>/dev/null
+cp -r $DIRNAME/Colors $DIRNAME/../bin/$SKINNAME/colors 2>/dev/null
+cp -r $DIRNAME/Fonts $DIRNAME/../bin/$SKINNAME/fonts 2>/dev/null
+cp -r $DIRNAME/Sounds $DIRNAME/../bin/$SKINNAME/sounds 2>/dev/null
+cp -r $DIRNAME/scripts $DIRNAME/../bin/$SKINNAME/scripts 2>/dev/null
+cp -r $DIRNAME/language $DIRNAME/../bin/$SKINNAME/language 2>/dev/null
+cp -r $DIRNAME/extras $DIRNAME/../bin/$SKINNAME/extras 2>/dev/null
+cp -r $DIRNAME/*.xml $DIRNAME/../bin/$SKINNAME/. 2>/dev/null
+cp -r $DIRNAME/*.txt $DIRNAME/../bin/$SKINNAME/. 2>/dev/null
+mkdir $DIRNAME/../bin/$SKINNAME/media
+cp -r $DIRNAME/Media/*.xpr $DIRNAME/../bin/$SKINNAME/media/. 2>/dev/null
 echo "done."
 
 ## Create revision include file
 if [ ! -z "$DEFAULTRESOLUTION" ];
 then
 	echo -n "Making $DEFAULTRESOLUTION revision.xml include file: "
-	echo "<!-- $SKINNAME skin revision: ${REVISION} - built with build.sh version 0.1 -->" > $DIRNAME/BUILD/$SKINNAME/${DEFAULTRESOLUTION}/revision.xml
-	echo "<includes>" >> $DIRNAME/BUILD/$SKINNAME/${DEFAULTRESOLUTION}/revision.xml
-	echo "<include name=\"Revision\">" >> $DIRNAME/BUILD/$SKINNAME/${DEFAULTRESOLUTION}/revision.xml
-	echo "<label>$SKINNAME ${VERSION}, SVN - r${REVISION}</label>" >> $DIRNAME/BUILD/$SKINNAME/${DEFAULTRESOLUTION}/revision.xml
-	echo "</include>" >> $DIRNAME/BUILD/$SKINNAME/${DEFAULTRESOLUTION}/revision.xml
-	echo "</includes>" >> $DIRNAME/BUILD/$SKINNAME/${DEFAULTRESOLUTION}/revision.xml
+	echo "<!-- $SKINNAME skin revision: ${REVISION} - built with build.sh version 0.1 -->" > $DIRNAME/../bin/$SKINNAME/${DEFAULTRESOLUTION}/revision.xml
+	echo "<includes>" >> $DIRNAME/../bin/$SKINNAME/${DEFAULTRESOLUTION}/revision.xml
+	echo "<include name=\"Revision\">" >> $DIRNAME/../bin/$SKINNAME/${DEFAULTRESOLUTION}/revision.xml
+	echo "<label>$SKINNAME ${VERSION}, SVN - r${REVISION}</label>" >> $DIRNAME/../bin/$SKINNAME/${DEFAULTRESOLUTION}/revision.xml
+	echo "</include>" >> $DIRNAME/../bin/$SKINNAME/${DEFAULTRESOLUTION}/revision.xml
+	echo "</includes>" >> $DIRNAME/../bin/$SKINNAME/${DEFAULTRESOLUTION}/revision.xml
 	echo "done."
 fi
 
 if [ ! -z "$DEFAULTRESOLUTIONWIDE" ];
 then
 	echo -n "Making $DEFAULTRESOLUTIONWIDE revision.xml include file: "
-	echo "<!-- $SKINNAME skin revision: ${REVISION} - built with build.sh version 0.1 -->" > $DIRNAME/BUILD/$SKINNAME/${DEFAULTRESOLUTIONWIDE}/revision.xml
-	echo "<includes>" >> $DIRNAME/BUILD/$SKINNAME/${DEFAULTRESOLUTIONWIDE}/revision.xml
-	echo "<include name=\"Revision\">" >> $DIRNAME/BUILD/$SKINNAME/${DEFAULTRESOLUTIONWIDE}/revision.xml
-	echo "<label>$SKINNAME ${VERSION}, SVN - r${REVISION}</label>" >> $DIRNAME/BUILD/$SKINNAME/${DEFAULTRESOLUTIONWIDE}/revision.xml
-	echo "</include>" >> $DIRNAME/BUILD/$SKINNAME/${DEFAULTRESOLUTIONWIDE}/revision.xml
-	echo "</includes>" >> $DIRNAME/BUILD/$SKINNAME/${DEFAULTRESOLUTIONWIDE}/revision.xml
+	echo "<!-- $SKINNAME skin revision: ${REVISION} - built with build.sh version 0.1 -->" > $DIRNAME/../bin/$SKINNAME/${DEFAULTRESOLUTIONWIDE}/revision.xml
+	echo "<includes>" >> $DIRNAME/../bin/$SKINNAME/${DEFAULTRESOLUTIONWIDE}/revision.xml
+	echo "<include name=\"Revision\">" >> $DIRNAME/../bin/$SKINNAME/${DEFAULTRESOLUTIONWIDE}/revision.xml
+	echo "<label>$SKINNAME ${VERSION}, SVN - r${REVISION}</label>" >> $DIRNAME/../bin/$SKINNAME/${DEFAULTRESOLUTIONWIDE}/revision.xml
+	echo "</include>" >> $DIRNAME/../bin/$SKINNAME/${DEFAULTRESOLUTIONWIDE}/revision.xml
+	echo "</includes>" >> $DIRNAME/../bin/$SKINNAME/${DEFAULTRESOLUTIONWIDE}/revision.xml
 	echo "done."
 fi
 
@@ -182,7 +182,7 @@ echo "Build Complete - Scroll up to check for errors."
 echo ""
 echo "Final build is located in $DIRNAME/BUILD."
 echo ""
-echo "Copy the $DIRNAME/BUILD/$SKINNAME folder"
+echo "Copy the $DIRNAME/../bin/$SKINNAME folder"
 echo "to your XBMC skin folder"
 echo ""
 echo "======================================================================"
