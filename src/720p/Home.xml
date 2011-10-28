@@ -777,7 +777,7 @@
       <control type="group">
         <include>HomeSlideLeft</include>
 
-        <control type="wraplist" id="300">
+        <control type="fixedlist" id="300">
           <description>Home Main Menu</description>
           <posx>0</posx>
           <posy>69</posy>
@@ -787,13 +787,14 @@
           <ondown>300</ondown>
           <onleft>Skin.ToggleSetting(HideNowPlayingMusicInfo)</onleft>
           <onright>301</onright>
-          <focusposition>2</focusposition>
-          <scrolltime>200</scrolltime>
+          <focusposition>4</focusposition>
+          <scrolltime tween="bounce" easing="inout">300</scrolltime>
           <visible allowhiddenfocus="true">Control.HasFocus(300)</visible>
-          <animation effect="fade" start="0" end="100" time="500">Visible</animation>
+          <animation effect="slide" start="0,30" end="0,0" time="700" reversible="false" tween="circle" easing="out">Visible</animation>
+
           <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
   
-          <itemlayout width="600" height="140">
+          <itemlayout width="600" height="70">
             <control type="label">
               <posx>802</posx>
               <posy>20</posy>
@@ -808,7 +809,7 @@
             </control>
           </itemlayout>
     
-          <focusedlayout width="600" height="140">
+          <focusedlayout width="600" height="70">
             <control type="label">
               <include>HomeMainMenuFOLabel</include>
             </control>
@@ -821,7 +822,6 @@
             <item id="7">
               <description>Power Button</description>
               <label> $LOCALIZE[31007] </label>
-              <label2> $LOCALIZE[31017] </label2>
               <thumb>$INFO[Skin.String(CustomPowerBGFolder)]</thumb>
               <icon>HomeBGPower.png</icon>
               <onclick>XBMC.ActivateWindow(ShutdownMenu)</onclick>
@@ -829,7 +829,6 @@
             <item id="6">
               <description>My System Menu</description>
               <label> $LOCALIZE[31006] </label>
-              <label2> $LOCALIZE[31016] </label2>
               <thumb>$INFO[Skin.String(CustomSystemBGFolder)]</thumb>
               <icon>HomeBGSystem.png</icon>
               <onclick>SetFocus(506)</onclick>
@@ -837,7 +836,6 @@
             <item id="5">
               <description>My Weather Button</description>
               <label> $LOCALIZE[31005] </label>
-              <label2> $LOCALIZE[31043] </label2>
               <thumb>$INFO[Skin.String(CustomWeatherBGFolder)]</thumb>
               <icon>HomeBGWeather.png</icon>
               <onclick>XBMC.ActivateWindow(2600)</onclick>
@@ -847,7 +845,6 @@
             <item id="5">
               <description>My Weather Button</description>
               <label> $LOCALIZE[31005] </label>
-              <label2> $LOCALIZE[31043] </label2>
               <thumb>$INFO[Skin.String(CustomWeatherBGFolder)]$INFO[Weather.FanartCode]</thumb>
               <icon>HomeBGWeather.png</icon>
               <onclick>XBMC.ActivateWindow(2600)</onclick>
@@ -857,7 +854,6 @@
             <item id="1">
               <description>My Videos Button</description>
               <label> $LOCALIZE[31001] </label>
-              <label2> $LOCALIZE[31011] </label2>
               <thumb>$INFO[Skin.String(CustomVideosBGFolder)]</thumb>
               <icon>HomeBGVideos.png</icon>
               <visible>!Skin.HasSetting(HideVideos)</visible>
@@ -866,7 +862,6 @@
             <item id="9">
               <description>My Movies Button</description>
               <label> $LOCALIZE[31111] </label>
-              <label2> $LOCALIZE[31011] </label2>
               <thumb>$INFO[Skin.String(CustomMoviesBGFolder)]</thumb>
               <icon>HomeBGMovies.png</icon>
               <visible>!Skin.HasSetting(HideMovies)</visible>
@@ -875,7 +870,6 @@
             <item id="8">
               <description>My TV Shows Button</description>
               <label> $LOCALIZE[31008] </label>
-              <label2> $LOCALIZE[31011] </label2>
               <thumb>$INFO[Skin.String(CustomTvShowsBGFolder)]</thumb>
               <icon>HomeBGTvShows.png</icon>
               <visible>!Skin.HasSetting(HideTVShows)</visible>
@@ -884,7 +878,6 @@
             <item id="2">
               <description>My Music Button</description>
               <label> $LOCALIZE[31002] </label>
-              <label2> $LOCALIZE[31012] </label2>
               <thumb>$INFO[Skin.String(CustomMusicBGFolder)]</thumb>
               <icon>HomeBGMusic.png</icon>
               <visible>!Skin.HasSetting(HideMusic)</visible>
@@ -893,7 +886,6 @@
             <item id="3">
               <description>My Pics Button</description>
               <label> $LOCALIZE[31003] </label>
-              <label2> $LOCALIZE[31013] </label2>
               <thumb>$INFO[Skin.String(CustomPicturesBGFolder)]</thumb>
               <icon>HomeBGPictures.png</icon>
               <visible>!Skin.HasSetting(HidePictures)</visible>
@@ -902,7 +894,6 @@
             <item id="4">
               <description>My Programs Menu</description>
               <label> $LOCALIZE[31004] </label>
-              <label2> $LOCALIZE[31014] </label2>
               <thumb>$INFO[Skin.String(CustomProgramsBGFolder)]</thumb>
               <icon>HomeBGPrograms.png</icon>
               <visible>!Skin.HasSetting(HidePrograms)</visible>
@@ -911,7 +902,6 @@
             <item id="10">
               <description>DVD Button</description>
               <label>DVD</label>
-              <label2> $LOCALIZE[31019] </label2>
               <thumb>$INFO[Skin.String(CustomDVDBGFolder)]</thumb>
               <icon>HomeBGDVD.png</icon>
               <visible>System.HasMediadvd + !Skin.HasSetting(HideDVD)</visible>
@@ -1350,4 +1340,3 @@
 
   </controls>
 </window>
-
